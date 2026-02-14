@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="header">
+        <%-include("./partials/navBar")%>
+        <%if(!user){%>
+            <div class="btns">
+                <a href="/sign-up" class="nav-item">sign up</a>
+                <a href="/log-in" class="nav-item">log in</a>
+            </div>
+            Hi,create profile
+        </div>
+        <%}else{%>
+            <div class="profile">
+            <img src="" alt="">
+            <div class="username"><%=user.username%></div>
+            <div class="email"><%=user.email%></div>
+            <div class="role"><%=user.role%></div>
+            <a href="/edit">edit</a>
+            <a href="/log-out">logout</a>
+        </div>
+        <%}%>
+    </div>
+    <h1>add messages</h1>
+    <form action="/user/messages/add" method="post">
+        <textarea name="message" id="" rows="8" cols="28"></textarea>
+        <button type="submit">add message</button>
+    </form>
+</body>
+</html>

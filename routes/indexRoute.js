@@ -1,8 +1,9 @@
 const { Router } = require("express");
 const passport = require("passport");
 const { getSignUp, postSignUp, getLogin } = require("../controllers/authControllers");
-const { signUpValidation } = require("../validation/validation");
-const { indexController } = require("../controllers/indexController");
+const { signUpValidation, checkRole } = require("../validation/validation");
+const { indexController, Getmessage, addMessageGet, addMessagePost } = require("../controllers/indexController");
+const { isAuth, isAdmin } = require("../middlewares/auth");
 
 const indexRouter = Router();
 
@@ -32,4 +33,7 @@ indexRouter.get("/",indexController)
 indexRouter.get("/sign-up",getSignUp);
 indexRouter.post("/sign-up",signUpValidation,postSignUp);
 
+indexRouter.get("/user/messages",isAuth,Getmessage);
+indexRouter.get("/user/messages/add",isAuth,checkRole(["user","admin"]),addMessageGet)
+indexRouter.post("/user/messages/add",isAuth,checkRole(["user","admin"]),addMessagePost)
 module.exports = indexRouter;
