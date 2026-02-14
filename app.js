@@ -7,12 +7,15 @@ require("./config/passport.config");
 require("dotenv").config();
 const pgSession = require('connect-pg-simple');
 const pool = require("./db/pool");
+const indexRouter = require("./routes/indexRoute");
+const { globalVariables } = require("./middlewares/globalEjsVar");
 
 const app = express();
 
 //set a view engine for displaying output.
 app.set("views",path.join(__dirname,"views"));
 app.set("view engine","ejs");
+
 
 const PGsession = pgSession(session);
 
@@ -31,9 +34,14 @@ app.use(session({
         maxAge: 1000*60*60*24*30
     }
 }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
+// add indexRouter where every-paths start to link with the each others
+app.use(globalVariables); // add global variable in all ejs tamplates.
+
+app.use("/",indexRouter);
 
 app.use(errorHandler);
 app.listen(3000,()=>{

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-up</title>
+</head>
+<body>
+    <div class="header">
+        <%-include("./partials/navBar")%>
+        <div class="profiles">
+            <img src="" alt="">
+            <div class="username"></div>
+            <a href="/edit">edit</a>
+            <a href="/log-out">logout</a>
+        </div>
+    </div>
+    <!-- basic header available in all the pages. -->
+
+    <h1>sign up form</h1>
+
+    <form action="/sign-up" method="post">
+        <div>
+            <label for="username">username :</label>
+            <input type="text" required name="username">
+        </div>
+        <div>
+            <label for="email">email :</label>
+            <input type="email" required name="email">
+        </div>
+        <div>
+            <label for="password">password :</label>
+            <input type="password" required name="password" minlength="6">
+        </div>
+        <div>
+            <label for="">select any one role :</label>
+            <select name="role" required id="">
+                <option value="viewer">viewer</option>
+                <option value="user">user</option>
+            </select>
+        </div>
+        <button type="submit">sign up</button>
+    </form>
+    <%if(error){%>
+        <%error.forEach((e)=>{%>
+            <h1><%=e.msg%></h1>
+        <%})%>
+    <%}%>
+</body>
+</html>
