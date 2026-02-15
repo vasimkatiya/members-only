@@ -38,7 +38,7 @@ const main = async () => {
     await client.query(`
       UPDATE users
       SET role = 'admin'
-      WHERE email = 'vasimkatiya@gmail.com';
+      WHERE email = 'vasim@gmail.com';
     `);
 
     await client.query(`ALTER TABLE users
