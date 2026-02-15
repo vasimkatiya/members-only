@@ -6,14 +6,24 @@
     <title>sign-up</title>
 </head>
 <body>
-    <div class="header">
+     <div class="header">
         <%-include("./partials/navBar")%>
-        <div class="profiles">
+        <%if(!user){%>
+            <div class="btns">
+                <a href="/sign-up" class="nav-item">sign up</a>
+                <a href="/log-in" class="nav-item">log in</a>
+            </div>
+            Hi,create profile
+        </div>
+        <%}else{%>
+            < class="profile">
             <img src="" alt="">
-            <div class="username"></div>
-            <a href="/edit">edit</a>
+            <div class="username"><%=user.username%></div>
+            <div class="email"><%=user.email%></div>
+            <div class="role"><%=user.role%></div>
             <a href="/log-out">logout</a>
         </div>
+        <%}%>
     </div>
     <!-- basic header available in all the pages. -->
 

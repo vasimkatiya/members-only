@@ -21,11 +21,33 @@
             <div class="username"><%=user.username%></div>
             <div class="email"><%=user.email%></div>
             <div class="role"><%=user.role%></div>
-            <a href="/edit">edit</a>
             <a href="/log-out">logout</a>
         </div>
         <%}%>
     </div>
-    <h1>message border</h1>
+    <h1>messages</h1>
+<% if(user.role == "admin"){ %>
+   
+    <% message.forEach((msg) => { %>
+        <div class="card">
+            <h1><%=msg.username%></h1>
+            <h3><%=msg.role%></h3>
+            <p><%=msg.message%></p>
+            <div class="links">
+                <a href="/user/messages/delete/<%=msg.id%>">delete</a>
+            </div>
+        </div>
+    <% }) %>
+    
+<% } else { %>
+     <% message.forEach((msg) => { %>
+        <div class="card">
+            <h1><%=msg.username%></h1>
+            <h3><%=msg.role%></h3>
+            <p><%=msg.message%></p>
+        </div>
+    <% }) %>
+<% } %>
+
 </body>
 </html>
