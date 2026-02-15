@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>messages</title>
+    <link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <div class="header">
@@ -17,37 +18,45 @@
         </div>
         <%}else{%>
             <div class="profile">
-            <img src="" alt="">
-            <div class="username"><%=user.username%></div>
-            <div class="email"><%=user.email%></div>
-            <div class="role"><%=user.role%></div>
-            <a href="/log-out">logout</a>
+                <div class="info">
+                    
+                    <div class="username"><%=user.username%></div>
+                    <div class="email"><%=user.email%></div>
+                    <div class="role"><%=user.role%></div>
+                </div>
+                <div class="img">
+                    <img src="/profile.jpg" alt="">
+                    <a href="/log-out" class="log-out">logout</a>
+                </div>
         </div>
         <%}%>
     </div>
-    <h1>messages</h1>
-<% if(user.role == "admin"){ %>
-   
-    <% message.forEach((msg) => { %>
-        <div class="card">
-            <h1><%=msg.username%></h1>
-            <h3><%=msg.role%></h3>
-            <p><%=msg.message%></p>
-            <div class="links">
-                <a href="/user/messages/delete/<%=msg.id%>">delete</a>
-            </div>
-        </div>
-    <% }) %>
-    
-<% } else { %>
-     <% message.forEach((msg) => { %>
-        <div class="card">
-            <h1><%=msg.username%></h1>
-            <h3><%=msg.role%></h3>
-            <p><%=msg.message%></p>
-        </div>
-    <% }) %>
-<% } %>
+    <h1 class="head">messages</h1>
+    <div class="message-con">
 
+        <% if(user.role == "admin"){ %>
+            
+            <% message.forEach((msg) => { %>
+                <div class="card">
+                    <h1><%=msg.username%></h1>
+                    <h3><%=msg.role%></h3>
+                    <p><%=msg.message%></p>
+                    <div class="links">
+                        <a href="/user/messages/delete/<%=msg.id%>">delete</a>
+                    </div>
+                </div>
+                <% }) %>
+                
+                <% } else { %>
+                    <% message.forEach((msg) => { %>
+                        <div class="card">
+                            <h1><%=msg.username%></h1>
+                            <h3><%=msg.role%></h3>
+                            <p><%=msg.message%></p>
+                        </div>
+                        <% }) %>
+                        <% } %>
+                        
+    </div>
 </body>
 </html>

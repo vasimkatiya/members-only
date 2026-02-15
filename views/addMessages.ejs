@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>add messages</title>
+    <link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <div class="header">
@@ -17,15 +18,20 @@
         </div>
         <%}else{%>
             <div class="profile">
-            <img src="" alt="">
-            <div class="username"><%=user.username%></div>
-            <div class="email"><%=user.email%></div>
-            <div class="role"><%=user.role%></div>
-            <a href="/log-out">logout</a>
+                <div class="info">
+                    
+                    <div class="username"><%=user.username%></div>
+                    <div class="email"><%=user.email%></div>
+                    <div class="role"><%=user.role%></div>
+                </div>
+                <div class="img">
+                    <img src="/profile.jpg" alt="">
+                    <a href="/log-out" class="log-out">logout</a>
+                </div>
         </div>
         <%}%>
     </div>
-    <h1>add messages</h1>
+    <h1 class="head">add messages</h1>
     <form action="/user/messages/add" method="post">
         <textarea name="message" id="" rows="8" cols="28"></textarea>
         <button type="submit">add message</button>

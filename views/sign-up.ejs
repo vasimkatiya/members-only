@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sign-up</title>
+    <link rel="stylesheet" href="/index.css">
 </head>
 <body>
-     <div class="header">
+    <div class="header">
         <%-include("./partials/navBar")%>
         <%if(!user){%>
             <div class="btns">
@@ -16,19 +17,24 @@
             Hi,create profile
         </div>
         <%}else{%>
-            < class="profile">
-            <img src="" alt="">
-            <div class="username"><%=user.username%></div>
-            <div class="email"><%=user.email%></div>
-            <div class="role"><%=user.role%></div>
-            <a href="/log-out">logout</a>
+            <div class="profile">
+                <div class="info">
+                    
+                    <div class="username"><%=user.username%></div>
+                    <div class="email"><%=user.email%></div>
+                    <div class="role"><%=user.role%></div>
+                </div>
+                <div class="img">
+                    <img src="/profile.jpg" alt="">
+                    <a href="/log-out" class="log-out">logout</a>
+                </div>
         </div>
         <%}%>
     </div>
     <!-- basic header available in all the pages. -->
 
-    <h1>sign up form</h1>
-
+    <h1 class="head">sign up form</h1>
+   
     <form action="/sign-up" method="post">
         <div>
             <label for="username">username :</label>

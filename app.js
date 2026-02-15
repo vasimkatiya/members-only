@@ -9,9 +9,12 @@ const pgSession = require('connect-pg-simple');
 const pool = require("./db/pool");
 const indexRouter = require("./routes/indexRoute");
 const { globalVariables } = require("./middlewares/globalEjsVar");
+const main = require("./db/populateDB");
 
+const port = process.env.PORT || 3000;
 const app = express();
 
+app.use(express.static(path.join(__dirname,"public")))
 //set a view engine for displaying output.
 app.set("views",path.join(__dirname,"views"));
 app.set("view engine","ejs");
@@ -44,6 +47,7 @@ app.use(globalVariables); // add global variable in all ejs tamplates.
 app.use("/",indexRouter);
 
 app.use(errorHandler);
-app.listen(3000,()=>{
+app.listen(port,()=>{
+    main();
     console.log("server running on the port on 3000 !");
 });

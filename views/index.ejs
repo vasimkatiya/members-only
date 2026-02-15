@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <div class="header">
@@ -17,13 +18,35 @@
         </div>
         <%}else{%>
             <div class="profile">
-            <img src="" alt="">
-            <div class="username"><%=user.username%></div>
-            <div class="email"><%=user.email%></div>
-            <div class="role"><%=user.role%></div>
-            <a href="/log-out">logout</a>
+                <div class="info">
+                    
+                    <div class="username"><%=user.username%></div>
+                    <div class="email"><%=user.email%></div>
+                    <div class="role"><%=user.role%></div>
+                </div>
+                <div class="img">
+                    <img src="/profile.jpg" alt="">
+                    <a href="/log-out" class="log-out">logout</a>
+                </div>
         </div>
         <%}%>
+    </div>
+    <div class="container">
+        <h1 class="tag-line">welocome <%if(!user){%>
+        <%}else{%>
+            <%=user.username%>
+        <%}%></h1>
+         <div class="rules">
+        <h3>roles :</h3>
+        <div class="viewer">
+            <h4>viewr :</h4>
+            <p>viewer only read the messages.</p>
+        </div>
+        <div class="user">
+            <h4>user :</h4>
+            <p>user have access to add message and read the messages.</p>
+        </div>
+    </div>
     </div>
 </body>
 </html>

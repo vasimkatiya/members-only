@@ -1,0 +1,189 @@
+body{
+    /* background: linear-gradient(#824d69,#522959,#2a114b); */
+    height: 100vh;
+    background-color: white;
+    width: 100vw;
+    overflow-x: hidden;
+    color: black;
+}
+
+.header{
+    width: 95%;
+    height: auto;
+    display: flex;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding:0.4rem 2rem;
+    border-radius: 2rem;
+    background-color: #2a114b;
+}
+
+nav{
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content:space-between ;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.img{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile{
+    display: flex;
+    justify-content: space-evenly;
+    width: 40%;
+    height: auto;
+}
+
+.nav-links{
+    display: flex;
+    flex-direction: row;
+    gap: 13px;
+}
+
+.nav-item{
+    padding: 0.5rem 1.5rem;
+    border-radius: 1.7rem;
+    background-color: rgba(255, 255, 255, 0.46);
+}
+.nav-item:hover{
+    transition: ease-out 0.3s;
+    background-color: #824d69;
+    color: black;
+}
+
+.img > img {
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.log-out{
+    padding: 0.5rem 1.5rem;
+    border-radius: 1.7rem;
+    background-color: rgba(255, 255, 255, 0.46);
+}
+
+.log-out:hover{
+    transition: ease-out 0.3s;
+    background-color: #ff0606;
+    color: black;
+}
+
+.tag-line{
+    margin-top: 20px;
+    color: black;
+    font-family: cursive;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.head{
+    text-align: center;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+form{
+    display: flex;
+    background-color: #824d69;
+    flex-direction: column;
+    width: 40%;
+    border-radius: 2rem;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 30px;
+    font-weight: 600;
+    margin: auto;
+    font-size: 20px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+label{
+    text-transform: capitalize;
+}
+
+input,select{
+    width: 250px;
+    height: 30px;
+    border-radius: 3rem;
+    border: 0.2px solid orangered;
+}
+
+form > button {
+    padding: 0.6rem 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+form > button:hover{
+    transform: scale(1.03);
+    background-color: green;
+    color: white;
+    transition: ease-out 0.2s;
+}
+
+.message-con{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: auto;
+}
+
+.rules{
+    background-color: #824d69;
+    color: black;
+    text-transform: capitalize;
+    font-weight: 600;
+    width: 500px;
+    padding: 15px;
+    border-radius: 2rem;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.card{
+    background-color: #2a114b;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 2.5rem;
+    width: 40%;
+}
+
+.card > .links > a{
+    padding: 0.5rem 1.5rem;
+    color: black;
+    border-radius: 1.7rem;
+    background-color: rgba(255, 255, 255, 0.46);
+}
+.card > .links > a:hover{
+
+    transition: ease-out 0.3s;
+    background-color: #ff0606;
+    color:white;
+}
