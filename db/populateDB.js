@@ -41,6 +41,10 @@ const main = async () => {
       WHERE email = 'vasimkatiya@gmail.com';
     `);
 
+    await client.query(`ALTER TABLE users
+ALTER COLUMN password TYPE TEXT;
+`);
+
     console.log("Tables created and admin updated successfully!");
   } catch (err) {
     console.error("Error:", err);
